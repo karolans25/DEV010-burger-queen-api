@@ -1,5 +1,9 @@
 # Burguer Queen API
 
+* [1- Docker](#1--docker)
+* [2- Install MongoDB y Compass](#2--install-mongodb-y-compass)
+* [3- Levanta la base de datos y servidor](#3--levanta-la-base-de-datos-y-servidor)
+
 ## 1- Docker
 
 #### Prerequisites
@@ -65,7 +69,7 @@ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null`
         
 `sudo apt-get update`
 
-![Result after run sudo docker run hello-world](image.png)
+![Result after run sudo docker run hello-world](img/image.png)
 
 You have now successfully installed and started Docker Engine.!!!
 
@@ -168,13 +172,13 @@ Then run the start command above again.
 
 `sudo systemctl status mongod`
 
-![Alt text](image-1.png)
+![Alt text](img/image-1.png)
 
 You can optionally ensure that MongoDB will start following a system reboot by issuing the following command:
 
 `sudo systemctl enable mongod`
 
-![Alt text](image-2.png)
+![Alt text](img/image-2.png)
 
 ##### 3. Stop MongoDB.
 
@@ -225,19 +229,19 @@ Finally, start MongoDB Compass
 
 `docker pull mongodb/mongodb-community-server`
 
-![Alt text](image-3.png)
+![Alt text](img/image-3.png)
 
 #### 2.Run the Image as a Container
 
 `docker run --name mongo -d mongodb/mongodb-community-server:latest`
 
-![Alt text](image-4.png)
+![Alt text](img/image-4.png)
 
 #### 3. Check that the Container is Running
 
 `docker container ls`
 
-![Alt text](image-5.png)
+![Alt text](img/image-5.png)
 
 #### 4. Connect to the MongoDB Deployment with `mongosh`
 
@@ -245,7 +249,7 @@ Open an interactive container instance of mongo and connect to the deployment wi
 
 `docker exec -it mongo mongosh`
 
-![Alt text](image-6.png)
+![Alt text](img/image-6.png)
 
 #### 5. Validate Your Deployment
 
@@ -277,7 +281,7 @@ The result of this command returns a document describing your `mongod` deploymen
    ok: 1
 }`
 
-![Alt text](image-7.png)
+![Alt text](img/image-7.png)
 
 ## 3- Levanta la base de datos y servidor
 
