@@ -296,3 +296,24 @@ Cómo levantar el servidor, este depende de tu instalación y sistema. Por ejemp
 Revisa la guía de instalación de , guía de instalación de Windows, o tu instalación en particular, para ejemplos en cómo levantarlo.
 
 Check the [Guide for mongodb](./guides/GETTING-STARTED-DOCKER.md)
+
+![Alt text](img/image-17.png)
+
+## 4- Elegir módulo (cliente)
+
+Ahora que ya tenemos un servidor de base de datos, vamos a necesitar elegir un módulo o librería diseñado para interactuar con nuestra base de datos desde Node.js. Existen un montón de opciones, pero para este proyecto te recomendamos usar el [Node.js driver de MongoDB](https://www.mongodb.com/docs/drivers/node/current/) que es la forma más directa de interactuar con tu instancia de MongoDB.
+
+Hay que instalar el Node.js Driver en este proyecto usando `npm`, revisa [la documentación oficial para más información](https://www.mongodb.com/docs/drivers/node/current/quick-start/download-and-install/#install-the-node.js-driver).
+
+El boilerplate ya incluye un archivo `config.js` donde se leen las variables de entorno, y entre ellas está `DB_URL`. Como vemos ese valor lo estamos asignando en la propiedad `dbUrl` del módulo `config`.
+
+`// config.js`
+
+`exports.dbUrl = process.env.MONGO_URL || process.env.DB_URL || 'mongodb://127.0.0.1:27017/test';`
+
+
+To check the conection for a test database, let's probe mongoDB Atlas with docker:
+
+`docker pull mongodb/atlas`
+
+at
